@@ -37,18 +37,17 @@
 	"type": "git",
 	"url": "git@github.com:NatLibFi/marc-record-converters.git"
     },
-    "license": "ISC",
+    "license": "(GPL-3.0+ AND ISC)",
     "version": "0.0.1",
-    "main": "./lib/main.js",
+    "main": "./lib/main-nodejs.js",
     "dependencies": {
 	"xmldom": "^0.1.19",
 	"marc-record-js": "^0.1.1",
-	"es6-polyfills": "https://github.com/NatLibFi/es6-polyfills",
+	"es6-polyfills": "https://github.com/NatLibFi/es6-polyfills"
     },
     "devDependencies": {
 	"chai": "^3.2.0",
 	"chai-as-promised": "^5.1.0",
-	"sinon": "^1.17.1",
 	"grunt": "^0.4.5",
 	"jshint": "^2.8.0",
 	"mocha": "^2.3.2",
