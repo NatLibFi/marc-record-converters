@@ -142,6 +142,8 @@ function factory(chai, chaiAsPromised, createConverter)
 
 	    });
 
+	    describe('#createWriter', function() {});
+
 	    describe('#convertFrom', function() {
 
 		it('Should convert data', function() {
@@ -194,6 +196,8 @@ function factory(chai, chaiAsPromised, createConverter)
 		});
 		
 	    });
+
+	    describe('#convertFrom', function() {});
 
 	});
 
