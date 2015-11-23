@@ -39,7 +39,7 @@
     },
     "license": "(GPL-3.0+ AND ISC)",
     "version": "0.0.1",
-    "main": "./lib/main-nodejs.js",
+    "main": "./lib/main.js",
     "dependencies": {
 	"xmldom": "^0.1.19",
 	"marc-record-js": "^0.1.1",
