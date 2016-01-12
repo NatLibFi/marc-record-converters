@@ -31,9 +31,9 @@
     'use strict';
 
     if (typeof define === 'function' && define.amd) {
-        define(['es6-polyfills/lib/promise', 'fs'], factory);
+        define(['es6-polyfills/lib/polyfills/promise', 'fs'], factory);
     } else if (typeof module === 'object' && module.exports) {
-        module.exports = factory(require('es6-polyfills/lib/promise'), require('fs'));
+        module.exports = factory(require('es6-polyfills/lib/polyfills/promise'), require('fs'));
     }
 
 }(this, factory));
