@@ -31,14 +31,24 @@
     'use strict';
 
     if (typeof define === 'function' && define.amd) {
-        define(['chai', 'chai-as-promised', '../../lib/converters/aleph-sequential'], factory);
+        define([
+	    'chai',
+	    'chai-as-promised',
+	    'marc-record-js',
+	    '../../lib/converters/aleph-sequential'
+	], factory);
     } else if (typeof module === 'object' && module.exports) {
-        module.exports = factory(require('chai'), require('chai-as-promised'), require('../../lib/converters/aleph-sequential'));
+        module.exports = factory(
+	    require('chai'),
+	    require('chai-as-promised'),
+	    require('marc-record-js'),
+	    require('../../lib/converters/aleph-sequential')
+	);
     }
 
 }(this, factory));
 
-function factory(chai, chaiAsPromised, createConverter)
+function factory(chai, chaiAsPromised, MarcRecord, createConverter)
 {
 
     'use strict';
@@ -54,11 +64,16 @@ function factory(chai, chaiAsPromised, createConverter)
 	    fromLargeFieldValues: 'test/resources/aleph-sequential/from_large_field_values',
 	    fromMultiple: 'test/resources/aleph-sequential/from_multiple',
 	    to: 'test/resources/aleph-sequential/to',
-	    toManyRepeatedFields:'test/resources/aleph-sequential/to_many_repeated_fields',
-	    toLargeFieldValues:'test/resources/aleph-sequential/to_large_field_values',
-	    erroneous: 'test/resources/aleph-sequential/erroneous'
+	    toManyRepeatedFields: 'test/resources/aleph-sequential/to_many_repeated_fields',
+	    toLargeFieldValues: 'test/resources/aleph-sequential/to_large_field_values',
+	    toMultiple: 'test/resources/aleph-sequential/to_multiple',
+	    erroneous: 'test/resources/aleph-sequential/erroneous',
+	    convertTo: 'test/resources/aleph-sequential/convertTo',
+	    convertToManyRepeatedFields: 'test/resources/aleph-sequential/convertTo_many_repeated_fields',
+	    convertToLargeFieldValues: 'test/resources/aleph-sequential/convertTo_large_field_values',
+	    convertToMultiple: 'test/resources/aleph-sequential/convertTo_multiple'
 	};
-	
+    
 	chai.use(chaiAsPromised);
 
 	describe('converter-aleph-sequential', function() {
@@ -179,12 +194,11 @@ function factory(chai, chaiAsPromised, createConverter)
 		it('Should convert data with multiple records in it', function() {
 
 		    var records = createConverter().convertFrom(resources.fromMultiple);
+		    var str_records = records[0].toString() + '\n' + records[1].toString() + '\n' + records[2].toString();
 
 		    expect(records).to.be.an('array');
 		    expect(records).to.have.length(3);
-		    expect(records[0].toString()).to.eql(resources.toManyRepeatedFields);
-		    expect(records[1].toString()).to.eql(resources.to);
-		    expect(records[2].toString()).to.eql(resources.toLargeFieldValues);
+		    expect(str_records).to.eql(resources.toMultiple);
 
 		});
 
@@ -197,7 +211,29 @@ function factory(chai, chaiAsPromised, createConverter)
 		
 	    });
 
-	    describe('#convertFrom', function() {});
+	    describe('#convertTo', function() {
+
+		it('Should convert data', function() {
+		    expect(createConverter().convertTo(MarcRecord.fromString(resources.to))).to.equal(resources.convertTo);
+		});
+
+		it('Should convert data to a record with many repeated fields', function() {
+		    expect(createConverter().convertTo(MarcRecord.fromString(resources.toManyRepeatedFields))).to.equal(resources.convertToManyRepeatedFields);
+		});
+
+		it('Should convert data to a record with large field values', function() {
+		    expect(createConverter().convertTo(MarcRecord.fromString(resources.toLargeFieldValues))).to.equal(resources.convertToLargeFieldValues);
+		});
+
+		it('Should throw because record is invalid', function() {
+		    expect(function() {
+
+			createConverter().convertTo('foo');
+
+		    }).to.throw(TypeError, /^record\.get is not a function/);
+		});
+
+	    });
 
 	});
 
