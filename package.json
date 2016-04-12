@@ -41,7 +41,7 @@
     "version": "0.0.1",
     "main": "./lib/main.js",
     "dependencies": {
-	"xmldom": "^0.1.19",
+	"xmldom": "0.1.19",
 	"marc-record-js": "^0.1.1",
 	"es6-polyfills": "https://github.com/NatLibFi/es6-polyfills"
     },
