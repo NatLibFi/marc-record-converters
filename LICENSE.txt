@@ -1,9 +1,7 @@
-Text of the ISC License:
+ISC License
 
-Copyright © 2004-2012 by Internet Systems Consortium, Inc. ("ISC")
-Copyright © 1995-2003 by Internet Software Consortium
-
- 
+Modified work: Copyright (c) 2015, 2017 University Of Helsinki (The National Library Of Finland)  
+Original work: Copyright (c) 2015 Pasi Tuominen
 
 Permission to use, copy, modify, and/or distribute this software for
 any purpose with or without fee is hereby granted, provided that the
