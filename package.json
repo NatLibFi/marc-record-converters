@@ -1,5 +1,5 @@
 {
-  "name": "marc-record-converters",
+  "name": "@natlibfi/marc-record-converters",
   "description": "Convert MARC records between different formats",
   "contributors": [
     {
@@ -38,7 +38,7 @@
     "url": "git@github.com:natlibfi/marc-record-converters.git"
   },
   "license": "ISC",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./lib/main",
   "scripts": {
     "lint": "jshint .",

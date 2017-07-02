@@ -1,4 +1,4 @@
-# Convert MARC records between different formats [![Build Status](https://travis-ci.org/NatLibFi/marc-record-converters.svg)](https://travis-ci.org/NatLibFi/marc-record-converters) [![Test Coverage](https://codeclimate.com/github/NatLibFi/marc-record-converters/badges/coverage.svg)](https://codeclimate.com/github/NatLibFi/marc-record-converters/coverage)
+# Convert MARC records between different formats [![NPM Version](https://img.shields.io/npm/v/@natlibfi/marc-record-converters.svg)](https://npmjs.org/package/@natlibfi/marc-record-converters) [![Build Status](https://travis-ci.org/NatLibFi/marc-record-converters.svg)](https://travis-ci.org/NatLibFi/marc-record-converters) [![Test Coverage](https://codeclimate.com/github/NatLibFi/marc-record-converters/badges/coverage.svg)](https://codeclimate.com/github/NatLibFi/marc-record-converters/coverage)
 
 Convert MARC records between different formats. The following converters are available:
 
