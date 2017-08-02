@@ -2,9 +2,9 @@
 
 Convert MARC records between different formats. The following converters are available:
 
-- **marc21slim-xml**: [Library of Congress's](https://www.loc.gov) XML representation of MARC21. XML documents must validate against the [schema](https://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd)
+- **marc21slimXML**: [Library of Congress's](https://www.loc.gov) XML representation of MARC21. XML documents must validate against the [schema](https://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd)
 - **iso2709**: MARC21 instance of [ISO 2709 exhange format](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=41319)
-- **aleph-sequential**: Internal MARC21 format of [Ex Libris's Aleph ILS](http://www.exlibrisgroup.com/category/Aleph)
+- **alephSequential**: Internal MARC21 format of [Ex Libris's Aleph ILS](http://www.exlibrisgroup.com/category/Aleph)
 
 ## Usage
 
